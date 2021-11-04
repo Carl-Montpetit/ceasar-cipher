@@ -1,8 +1,8 @@
 /**
  * @file cesar.h
  * @author Carl Montpetit (MONC08069000)
- * @brief hearders of a program that provides the functionality to draw on ASCII canvas
- * initially created on standard input or output
+ * @brief hearders of a program that provides the functionality to translate
+ * texte encrypted with the encryption of Cesar
  * @version 1.0
  * @date 2021-10-20
  *
