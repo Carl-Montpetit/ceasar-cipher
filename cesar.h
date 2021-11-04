@@ -26,6 +26,16 @@
 // Provides macros for reporting and retrieving error conditions using the
 // symbol errno
 #include <errno.h>
+
+// Constants declarations
+#define EXECUTABLE arguments_list[0]
+#define INPUT_FILE arguments_list[1]
+#define OUTPUT_FILE arguments_list[2]
+#define ERR_MSG_NO_ARGS "✗ Error, please insert arguments to the program!…\n"
+#define ERR_MSG_FILE_EMPTY "✗ Error, the file passed to the program is empty!…\n"
+#define MSG_ORIGINAL_FILE "✦ The original file is :\n"
+#define MSG_TRANSLATED_FILE "✦ The translated file is :\n"
+#define ALPHABET_NUMBER 26
 //------------------------------------------------------------------------------
 // Declarations of ∀types with docstrings
 //------------------------------------------------------------------------------
