@@ -9,16 +9,18 @@
  * @date remise: 14 novembre 2021 avant 23:59
  *
  * @copyright Copyright (c) 2021
- * TODO [] 3 white spaces indent
- * TODO [] max 10 lines functions
- * TODO [] follow the modulation standard (.h & .c)
+ * TODO [x] 3 white spaces indent
+ * TODO [x] max 10 lines functions
+ * TODO [x] follow the modulation standard (.h & .c)
  * TODO [] system error gestion (io, try/catch, etc)
- * TODO [] function & variables ➡︎ snake_case
+ * TODO [x] function & variables ➡︎ snake_case
  * TODO [] cover well the code with tests (bats)
  * TODO [] code lisibility = amazing!
- * TODO [] CI integration wih gitlab
- * TODO [] no compilation error at start-up (-Wall) 
+ * TODO [x] CI integration wih gitlab
+ * TODO [] no compilation error at start-up (-Wall)
  * TODO [] test on Uqam server ➡︎ ssh java.labunix.uqam.ca
+ * TODO [] complete the make file
+ * TODO [] README.md is completed
  *
  */
 
