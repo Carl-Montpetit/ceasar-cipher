@@ -31,8 +31,17 @@
 // ASCII code of A-Z ➡︎ [65,90] & a-z ➡︎ [97,122]
 // +3 for cesar encryption of the TP
 //------------------------------------------------------------------------------
-// ASCII code of A-Z ➡︎ [65,90] & a-z ➡︎ [97,122]
-// +3 for cesar
+bool is_letter(char cesar_character) {
+  bool is_letter = false;
+
+  if ((cesar_character >= 65 && cesar_character <= 90) ||
+      (cesar_character >= 97 && cesar_character <= 122)) {
+    is_letter = true;
+  }
+
+  return is_letter;
+}
+
 //------------------------------------------------------------------------------
 // ☆ STARTING POINT FOR PROGRAM EXECUTION ☆
 // Exit code value = 0 if there's no error
