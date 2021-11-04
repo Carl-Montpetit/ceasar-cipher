@@ -42,6 +42,18 @@ bool is_letter(char cesar_character) {
   return is_letter;
 }
 
+char *translate_cesar(char buffer[]) {
+  for (unsigned int i = 0; i < strlen(buffer); i++) {
+    if (is_letter(buffer[i]) && is_letter(buffer[i] - 3)) {
+      buffer[i] = buffer[i] - 3;
+    } else if (is_letter(buffer[i]) && !is_letter(buffer[i] - 3)) {
+      buffer[i] = (buffer[i] - 3) + ALPHABET_NUMBER;
+    }
+  }
+
+  return buffer;
+}
+
 //------------------------------------------------------------------------------
 // ☆ STARTING POINT FOR PROGRAM EXECUTION ☆
 // Exit code value = 0 if there's no error
