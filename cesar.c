@@ -35,8 +35,9 @@
 // +3 for cesar
 //------------------------------------------------------------------------------
 // ☆ STARTING POINT FOR PROGRAM EXECUTION ☆
-// ⚠️ Exit code = 0 if there's no error, code take a value x∈ℕ\{0}
-// otherwise
+// Exit code value = 0 if there's no error
+// otherwise, exit code value takes a value → x∈ℕ\{0}
+//
 //------------------------------------------------------------------------------
 int main(int argumentsNumber, char *argumentsList[]) { 
   // argumentsList[0] ➡︎ executable
