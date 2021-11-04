@@ -1,8 +1,9 @@
 /**
  * @file cesar.c
  * @author Carl Montpetit (MONC08069000)
- * @brief implementationon of a program that provides the functionality to draw
- * on ASCII canvas initially created on standard input or output
+ * @brief implementation of a program that provides the functionality to
+ * translate texte encrypted with the encryption of Cesar (with a shift of +3
+ * for the TP)
  * @version 1.0
  * @date 2021-10-20
  * @date remise: 14 novembre 2021 avant 23:59
