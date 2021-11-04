@@ -26,7 +26,10 @@
 
 #include "cesar.h"
 //------------------------------------------------------------------------------
-// ∀funtions definitions
+// ∀functions definitions
+//
+// ASCII code of A-Z ➡︎ [65,90] & a-z ➡︎ [97,122]
+// +3 for cesar encryption of the TP
 //------------------------------------------------------------------------------
 // ASCII code of A-Z ➡︎ [65,90] & a-z ➡︎ [97,122]
 // +3 for cesar
