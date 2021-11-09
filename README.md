@@ -1,4 +1,4 @@
-# TP1: Dessiner sur un canevas ASCII"
+# TP2: Décryption du chiffrement de César"
 
 ---
 
@@ -38,7 +38,7 @@ Carl Montpetit (MONC08069000)
 * [x] L'URL du dépôt GitLab est exactement (remplacer `utilisateur` par votre
   nom identifiant GitLab) `https://gitlab.info.uqam.ca/utilisateur/inf3135-automne2021-tp2`
   (Pénalité de **50%**).
-* [] L'utilisateur `dogny_g` et `@correcteurs` a accès au projet en mode *Developer*
+* [x] L'utilisateur `dogny_g` et `@correcteurs` a accès au projet en mode *Developer*
   (Pénalité de **50%**).
 * [x] Le dépôt GitLab est privé (Pénalité de **50%**).
 * [x] Le dépôt contient au moins un fichier `.gitignore`.
@@ -47,8 +47,8 @@ Carl Montpetit (MONC08069000)
 * [] Le nombre de tests qui réussissent/échouent avec la `make test` est
   indiqué quelque part dans le fichier `README.md`.
 * [] Les sections incomplètes de ce fichier (`README.md`) ont été complétées.
-* [] L'en-tête du fichier est documentée.
-* [] L'en-tête des déclarations des fonctions est documentée (*docstring*).
-* [] Le programme ne contient pas de valeurs magiques.
+* [x] L'en-tête du fichier est documentée.
+* [x] L'en-tête des déclarations des fonctions est documentée (*docstring*).
+* [x] Le programme ne contient pas de valeurs magiques.
 
 ---
