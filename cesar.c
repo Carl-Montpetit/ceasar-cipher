@@ -1,35 +1,40 @@
 /**
  * @file cesar.c
  * @author Carl Montpetit (MONC08069000)
- * @brief implementation of a program that provides the functionality to
- * translate texte encrypted with the encryption of Cesar (with a shift of +3
- * for the TP)
+ * @brief Implementation of a program that provides the functionality to
+ * translate text encrypted with the encoding of Cesar (with a shift of +3).
+ * It takes a file encrypted and write the translation in an other file
+ * @see https://en.wikipedia.org/wiki/Caesar_cipher
  * @version 1.0
  * @date 2021-10-20
- * @date remise: 14 novembre 2021 avant 23:59
+ * @date Remise ⟾ 14 novembre 2021 avant 23:59
  *
  * @copyright Copyright (c) 2021
+ *
+ * ☆ ✅ TODO-LIST FOR THE PROJECT ⬇︎ ☆
  * TODO [x] 3 white spaces indent
  * TODO [x] max 10 lines functions
  * TODO [x] follow the modulation standard (.h & .c)
- * TODO [] system error gestion (io, try/catch, etc)
- * TODO [x] function & variables ➡︎ snake_case
- * TODO [] cover well the code with tests (bats)
- * TODO [] code lisibility = amazing!
+ * TODO [x] function & variables ➡︎ snake_case🐍
+ * TODO [x] code lisibility = amazing!
  * TODO [x] CI integration wih gitlab
- * TODO [] no compilation error at start-up (-Wall)
+ * TODO [x] no compilation error at start-up (-Wall)
+ * TODO [x] 80 characters maximum in file translation
  * TODO [] test on Uqam server ➡︎ ssh java.labunix.uqam.ca
  * TODO [] complete the make file
  * TODO [] README.md is completed
- *
+ * TODO [] cover well the code with tests (bats)
+ * TODO [] system error gestion (io, try/catch, etc)
  */
-
+//------------------------------------------------------------------------------
+// ☆ INCLUSION(S) ☆
+//------------------------------------------------------------------------------
 #include "cesar.h"
 //------------------------------------------------------------------------------
-// ∀functions definitions
+// ☆ ∀FUNCTIONS DEFINITIONS ☆
 //
-// ASCII code of A-Z ➡︎ [65,90] & a-z ➡︎ [97,122]
-// +3 for cesar encryption of the TP
+// ASCII code of A-Z ⇋ [65,90] & a-z ⇋ [97,122] ⟿ Inclusive intervals
+// +3 for cesar cypher encoding of the TP ⇋ -3 for translation of cesar cypher
 //------------------------------------------------------------------------------
 void translate_cesar_file(FILE *file_input, FILE *file_output, char *line) {
   unsigned int count = 1;
@@ -139,9 +144,10 @@ unsigned int get_size_file(char *file_name) {
 }
 //------------------------------------------------------------------------------
 // ☆ STARTING POINT FOR PROGRAM EXECUTION ☆
-// Exit code value = 0 if there's no error
-// otherwise, exit code value takes a value → x∈ℕ\{0}
 //
+// Exit code value = 0 if there's no error
+// Otherwise, exit code value takes a value in x ∈ ℕ\{0}, where x is the code
+// error
 //------------------------------------------------------------------------------
 int main(int number_of_arguments, char *list_of_arguments[]) {
   print_welcome_msg();
@@ -175,3 +181,6 @@ int main(int number_of_arguments, char *list_of_arguments[]) {
 
   exit(OK);
 }
+//------------------------------------------------------------------------------
+// ☆ END OF IMPLEMENTATION ☆
+//------------------------------------------------------------------------------
