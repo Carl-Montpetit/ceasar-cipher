@@ -31,25 +31,47 @@
 // ASCII code of A-Z ➡︎ [65,90] & a-z ➡︎ [97,122]
 // +3 for cesar encryption of the TP
 //------------------------------------------------------------------------------
-bool is_letter(char cesar_character) {
-  bool is_letter = false;
+void translate_cesar_file(FILE *file_input, FILE *file_output, char *line) {
+  unsigned int count = 1;
+  while (fgets(line, MAX_CHARACTERS_FOR_LINE * sizeof(char), file_input)) {
+    destroy_line_jump(line);
+    print_line(line, count);
+    translate_cesar_line(line);
+    fputs(line, file_output);
+    if (line)
+      fputc('\n', file_output);
+    fprintf(stdout, "%s\n", line);
+    ++count;
+  }
+}
 
-  if ((cesar_character >= 65 && cesar_character <= 90) ||
-      (cesar_character >= 97 && cesar_character <= 122)) {
-    is_letter = true;
+void print_line(char *line, unsigned int count) {
+  fprintf(stdout, MSG_ORIGINAL_FILE, count);
+  fprintf(stdout, "%s\n", line);
+  fprintf(stdout, MSG_TRANSLATED_FILE, count);
+}
+
+void destroy_line_jump(char *line) {
+  for (unsigned int i = 0; i < strlen(line); i++) {
+    if (line[i] == '\n')
+      line[i] = ' ';
+  }
+}
+
   }
 
   return is_letter;
 }
 
-char *translate_cesar(char buffer[]) {
-  for (unsigned int i = 0; i < strlen(buffer); i++) {
-    if (is_letter(buffer[i]) && is_letter(buffer[i] - 3)) {
-      buffer[i] = buffer[i] - 3;
-    } else if (is_letter(buffer[i]) && !is_letter(buffer[i] - 3)) {
-      buffer[i] = (buffer[i] - 3) + ALPHABET_NUMBER;
+char *translate_cesar_line(char line[]) {
+  for (unsigned int i = 0; i < strlen(line); i++) {
+    if (is_letter(line[i]) && is_letter(line[i] - 3)) {
+      line[i] = line[i] - 3;
+    } else if (is_letter(line[i]) && !is_letter(line[i] - 3)) {
+      line[i] = (line[i] - 3) + ALPHABET_NUMBER;
     }
   }
+  return line;
 
   return buffer;
 }
