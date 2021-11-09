@@ -96,8 +96,23 @@ void destroy_line_jump(char *line) {
   }
 }
 
+bool file_is_empty(char *input_file) {
+  bool is_empty = false;
+  if (get_size_file(input_file) == 0) {
+    fprintf(stderr, ERR_MSG_FILE_EMPTY, input_file);
+    is_empty = true;
+  } else {
+    fprintf(stdout, MSG_SIZE, get_size_file(input_file));
   }
+  return is_empty;
+}
 
+bool is_letter(const char character) {
+  bool is_letter = false;
+  if ((character >= 65 && character <= 90) ||
+      (character >= 97 && character <= 122)) {
+    is_letter = true;
+  }
   return is_letter;
 }
 
@@ -110,10 +125,18 @@ char *translate_cesar_line(char line[]) {
     }
   }
   return line;
-
-  return buffer;
 }
 
+unsigned int get_size_file(char *file_name) {
+  unsigned int size = 0;
+  FILE *file = fopen(file_name, "r");
+  if (file != NULL) {
+    fseek(file, 0, SEEK_END);
+    size = ftell(file);
+  }
+  fclose(file);
+  return size;
+}
 //------------------------------------------------------------------------------
 // ☆ STARTING POINT FOR PROGRAM EXECUTION ☆
 // Exit code value = 0 if there's no error
