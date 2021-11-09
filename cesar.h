@@ -1,10 +1,13 @@
 /**
  * @file cesar.h
  * @author Carl Montpetit (MONC08069000)
- * @brief hearders of a program that provides the functionality to translate
- * texte encrypted with the encryption of Cesar
+ * @brief Header of a program that provides the functionality to translate
+ * texte encrypted with the encryption of Cesar (with a shift of +3). It takes a
+ * file encrypted and write the translation in an other file
+ * @see https://en.wikipedia.org/wiki/Caesar_cipher
  * @version 1.0
  * @date 2021-10-20
+ * @date Remise ⟾ 14 novembre 2021 avant 23:59
  *
  * @copyright Copyright (c) 2021
  */
