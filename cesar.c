@@ -143,10 +143,35 @@ unsigned int get_size_file(char *file_name) {
 // otherwise, exit code value takes a value → x∈ℕ\{0}
 //
 //------------------------------------------------------------------------------
-int main(int argumentsNumber, char *argumentsList[]) { 
-  // argumentsList[0] ➡︎ executable
-  // argumentsList[1] ➡︎ intput_file
-  // argumentsList[2] ➡︎ output_file
-
-  return 1; 
+int main(int number_of_arguments, char *list_of_arguments[]) {
+  print_welcome_msg();
+  if (number_of_arguments <= 2) {
+    fprintf(stderr, ERR_MSG_NO_ARGS);
+    exit(ERR_NO_ARGS);
   }
+  char line[MAX_CHARACTERS_FOR_LINE];
+  FILE *file_input, *file_output;
+
+  file_input = fopen(INPUT_FILE, "r");
+  file_output = fopen(OUTPUT_FILE, "w");
+
+  if (file_input == NULL) {
+    print_end_err_msg_doesnt_exist(INPUT_FILE, OUTPUT_FILE);
+    exit(ERR_FILE_DOESNT_EXIST);
+  }
+
+  if (file_is_empty(INPUT_FILE)) {
+    print_end_err_msg_empty(INPUT_FILE, OUTPUT_FILE);
+    exit(ERR_FILE_EMPTY);
+  }
+  print_success_msg();
+
+  translate_cesar_file(file_input, file_output, line);
+
+  fclose(file_input);
+  fclose(file_output);
+
+  print_end_success_msg(INPUT_FILE, OUTPUT_FILE);
+
+  exit(OK);
+}
