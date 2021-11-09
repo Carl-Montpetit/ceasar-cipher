@@ -51,6 +51,44 @@ void print_line(char *line, unsigned int count) {
   fprintf(stdout, MSG_TRANSLATED_FILE, count);
 }
 
+void print_separator(void) { fprintf(stdout, LINE_SEPARATOR); }
+
+void print_welcome_msg(void) {
+  print_separator();
+  fprintf(stdout, MSG_WELCOME);
+  print_separator();
+}
+
+void print_success_msg(void) {
+  fprintf(stdout, MSG_SUCCESS);
+  print_separator();
+}
+
+void print_end_success_msg(char *input_file, char *output_file) {
+  print_separator();
+  fprintf(stdout, MSG_IS_TRANSLATED, input_file, output_file);
+  print_separator();
+  fprintf(stdout, MSG_END);
+  print_separator();
+}
+
+void print_end_err_msg_doesnt_exist(char *input_file, char *output_file) {
+  print_separator();
+  fprintf(stderr, ERR_MSG_DOESNT_EXIST, input_file);
+  fprintf(stderr, ERR_MSG_NOT_TRANSLATED, input_file, output_file);
+  print_separator();
+  fprintf(stderr, ERR_MSG_END);
+  print_separator();
+}
+
+void print_end_err_msg_empty(char *input_file, char *output_file) {
+  print_separator();
+  fprintf(stderr, ERR_MSG_NOT_TRANSLATED, input_file, output_file);
+  print_separator();
+  fprintf(stderr, ERR_MSG_END);
+  print_separator();
+}
+
 void destroy_line_jump(char *line) {
   for (unsigned int i = 0; i < strlen(line); i++) {
     if (line[i] == '\n')
