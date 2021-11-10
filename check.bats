@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
 # TESTS FOR CESAR APPLICATION
 #
-# ⚠️ Note that the program replace '\n' by white space while reading and writing for managing lines > 80 characters
+# ⚠️ Note that the program replace '\n' by white space while reading and writing for managing lines with > 80 characters
 # ------------------------------------------------------------------------------
 # CONSTANTS
 examples_folder=examples
@@ -29,7 +29,7 @@ err_msg_file_doesnt_exist="✗ Error, the input file ☞ whatever.txt doesn't ex
     [ "${lines[0]}" = "$err_msg_file_doesnt_exist" ]
 }
 
-@test "Input file original content reading example #1 test" {
+@test "Input file original content reading, with an empty line" {
     run ./$prog $examples_folder/input1.txt $examples_folder/output.txt 
     [ "$status" -eq 0 ]
     [ "${lines[7]}" = "Door, frpphqw fd yd? CD cd " ]
@@ -39,7 +39,7 @@ err_msg_file_doesnt_exist="✗ Error, the input file ☞ whatever.txt doesn't ex
 
 }
 
-@test "Input file translation example #1 test" {
+@test "Input file translation, with an empty line" {
     run ./$prog $examples_folder/input1.txt $examples_folder/output.txt 
     [ "$status" -eq 0 ]
     [ "${lines[9]}" = "Allo, comment ca va? ZA za " ]
@@ -48,7 +48,7 @@ err_msg_file_doesnt_exist="✗ Error, the input file ☞ whatever.txt doesn't ex
     [ "${lines[21]]}" = "XYZABCDEFGHIJKLMNOPQRSTUVW $%^" ]
 }
 
-@test "Input file original content reading example #2 test" {
+@test "Input file original content reading, with > 80 characters line" {
     run ./$prog $examples_folder/bigline.txt $examples_folder/output.txt 
     [ "$status" -eq 0 ]
     [ "${lines[7]}" = "sdaffasasdsajhfjsafjsldkjsalfjalfhlasfjsalkfjaslkfjaslfjsalkfjfkldasfasfsfaallo" ]
@@ -57,7 +57,7 @@ err_msg_file_doesnt_exist="✗ Error, the input file ☞ whatever.txt doesn't ex
 
 }
 
-@test "Input file translation example #2 test" {
+@test "Input file translation, with > 80 characters line" {
     run ./$prog $examples_folder/bigline.txt $examples_folder/output.txt 
     [ "$status" -eq 0 ]
     [ "${lines[9]}" = "paxccxpxpapxgecgpxcgpiahgpxicgxiceixpcgpxihcgxpihcgxpicgpxihcgchiaxpcxpcpcxxiil" ]
