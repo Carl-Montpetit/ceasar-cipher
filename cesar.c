@@ -24,7 +24,7 @@
  * TODO [] complete the make file
  * TODO [] README.md is completed
  * TODO [] cover well the code with tests (bats)
- * TODO [] system error gestion (io, try/catch, etc)
+ * TODO [] system error gestion
  */
 //------------------------------------------------------------------------------
 // ☆ INCLUSION(S) ☆
@@ -145,9 +145,15 @@ unsigned int get_size_file(char *file_name) {
 //------------------------------------------------------------------------------
 // ☆ STARTING POINT FOR PROGRAM EXECUTION ☆
 //
-// Exit code value = 0 if there's no error
+// Exit code value = 0 if there's no error.
 // Otherwise, exit code value takes a value in x ∈ ℕ\{0}, where x is the code
-// error
+// error.
+//
+// ⚠️ If a line contains more than 80 characters in the input file it will
+// read and translate it. In addition, it will write the result so that the
+// output file contains maximum 80 characters as result. At the same time, it
+// will print to stdout the text of input file within maximum 80 characters per
+// line.
 //------------------------------------------------------------------------------
 int main(int number_of_arguments, char *list_of_arguments[]) {
   print_welcome_msg();
@@ -157,28 +163,21 @@ int main(int number_of_arguments, char *list_of_arguments[]) {
   }
   char line[MAX_CHARACTERS_FOR_LINE];
   FILE *file_input, *file_output;
-
   file_input = fopen(INPUT_FILE, "r");
   file_output = fopen(OUTPUT_FILE, "w");
-
   if (file_input == NULL) {
     print_end_err_msg_doesnt_exist(INPUT_FILE, OUTPUT_FILE);
     exit(ERR_FILE_DOESNT_EXIST);
   }
-
   if (file_is_empty(INPUT_FILE)) {
     print_end_err_msg_empty(INPUT_FILE, OUTPUT_FILE);
     exit(ERR_FILE_EMPTY);
   }
   print_success_msg();
-
   translate_cesar_file(file_input, file_output, line);
-
   fclose(file_input);
   fclose(file_output);
-
   print_end_success_msg(INPUT_FILE, OUTPUT_FILE);
-
   exit(OK);
 }
 //------------------------------------------------------------------------------
