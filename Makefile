@@ -9,7 +9,7 @@ VERSION11 = -std=c11
 RUN_TESTS = bats
 TESTS_LIST = check.bats
 
-canvascii: $(C)
+cesar: $(C)
 	$(CC) $(DEBUG) $(CREATE_EXE) $(EXE) $(VERSION11) $(WARNINGS) $(C)
 
 test: $(TESTS_LIST)
