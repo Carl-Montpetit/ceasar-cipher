@@ -1,16 +1,17 @@
 before_script:
-    - apt-get update -qq
-    - git clone https://github.com/bats-core/bats-core.git /tmp/bats
-    - mkdir -p /tmp/local
-    - bash /tmp/bats/install.sh /tmp/local
-    - export PATH=$PATH:/tmp/local/bin
+  - apt-get update -qq
+  - apt-get install bats
+  - git clone https://github.com/bats-core/bats-core.git /tmp/bats
+  - mkdir -p /tmp/local
+  - bash /tmp/bats/install.sh /tmp/local
+  - export PATH=$PATH:/tmp/local/bin
 
 build:
-    stage: build
-    script:
-        - make
+  stage: build
+  script:
+    - make
 
 test:
-    stage: test
-    script:
-        - make test
+  stage: test
+  script:
+    - make test

@@ -2,3 +2,5 @@
 .vscode/*
 cesar 
 .DS_Store
+cesar.dSYM/*
+cesar.dSYM
