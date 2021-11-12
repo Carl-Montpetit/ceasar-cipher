@@ -1,7 +1,8 @@
 # ------------------------------------------------------------------------------
 # TESTS FOR CESAR APPLICATION
 #
-# ⚠️ Note that the program replace '\n' by white space while reading and writing for managing lines with > 80 characters
+# ⚠️ Note that the program replace '\n' by white space while reading and writing for managing lines with more than 80 characters
+# ⚠️ Tests passed locally but not on gitlab for some reasons🤷‍♂️…
 # ------------------------------------------------------------------------------
 # CONSTANTS
 examples_folder=examples
@@ -23,6 +24,12 @@ err_msg_file_doesnt_exist="✗ Error, the input file ☞ whatever.txt doesn't ex
     [ "${lines[0]}" = "$err_msg_file_empty" ]
 }
 
+@test "Input file containing only empty lines, show error message" {
+    run ./$prog $examples_folder/empty-lines.txt $examples_folder/output.txt
+    [ "$status" -eq 0 ]
+    [ "${lines[7]}" = " " ]
+}
+
 @test "Input file doesn't exist, show error message" {
     run ./$prog whatever.txt $examples_folder/output.txt
     [ "$status" -eq 3 ]
@@ -30,7 +37,7 @@ err_msg_file_doesnt_exist="✗ Error, the input file ☞ whatever.txt doesn't ex
 }
 
 @test "Input file original content reading, with an empty line" {
-    run ./$prog $examples_folder/input1.txt $examples_folder/output.txt
+    run ./$prog $examples_folder/test-1.txt $examples_folder/output.txt
     [ "$status" -eq 0 ]
     [ "${lines[7]}" = "Door, frpphqw fd yd? CD cd " ]
     [ "${lines[11]}" = "abcvdefghijklmnopqrstuvwxyz !@# " ]
@@ -39,7 +46,7 @@ err_msg_file_doesnt_exist="✗ Error, the input file ☞ whatever.txt doesn't ex
 }
 
 @test "Input file translation, with an empty line" {
-    run ./$prog $examples_folder/input1.txt $examples_folder/output.txt
+    run ./$prog $examples_folder/test-1.txt $examples_folder/output.txt
     [ "$status" -eq 0 ]
     [ "${lines[9]}" = "Allo, comment ca va? ZA za " ]
     [ "${lines[13]}" = "xyzsabcdefghijklmnopqrstuvw !@# " ]
