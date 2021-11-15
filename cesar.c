@@ -20,11 +20,11 @@
  * TODO [x] CI integration wih gitlab
  * TODO [x] no compilation error at start-up (-Wall)
  * TODO [x] 80 characters maximum in file translation
- * TODO [] test on Uqam server ➡︎ ssh java.labunix.uqam.ca
- * TODO [] complete the make file
- * TODO [] README.md is completed
- * TODO [] cover well the code with tests (bats)
- * TODO [] system error gestion
+ * TODO [x] test on Uqam server ➡︎ ssh java.labunix.uqam.ca
+ * TODO [x] complete the make file
+ * TODO [x] README.md is completed
+ * TODO [x] cover well the code with tests (bats)
+ * TODO [x] system error gestion
  */
 //------------------------------------------------------------------------------
 // ☆ INCLUSION(S) ☆
